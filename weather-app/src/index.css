@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e5f3fe;
+}
+
+.container {
+  width: 300px;
+  height: 620px;
+  background: #e5f3fe;
+  box-shadow: 5px 5px 10px #cee3f2, -5px -5px 10px #faffff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.search-box {
+  width: 100%;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.search-box input {
+  width: 70%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  background: #e5f3fe;
+  box-shadow: inset -7px -7px 20px 0px #fff9, inset -4px -4px 5px 0px #fff9,
+    inset 7px 7px 20px 0px #0002, inset 4px 4px 5px 0px #0001;
+  color: #87b0cd;
+  font-size: 0.9rem;
+}
+
+.result {
+  text-align: center;
+  color: #87b0cd;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  width: 100%;
+  background: #e5f3fe;
+  box-shadow: 5px 5px 10px #cee3f2, -5px -5px 10px #faffff;
+  padding: 5px;
+  margin: 5px auto;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.flex_2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 0 0;
+}
+
+.flex_2 div {
+  background: #e5f3fe;
+  box-shadow: 5px 5px 10px #cee3f2, -5px -5px 10px #faffff;
+  color: #87b0cd;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+footer {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 2%;
+  background: #e5f3fe;
+  box-shadow: 5px 5px 10px #cee3f2, -5px -5px 10px #faffff;
+  font-size: 0.65rem;
+  text-align: center;
+}
