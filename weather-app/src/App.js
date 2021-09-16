@@ -28,10 +28,9 @@ const App = () => {
     axios.request(options)
       .then(response => {
         setCurrentForecast(response.data)
-        console.log(response.data)
       })
       .catch(function (error) {
-        setCurrentForecast(error);
+        setCurrentForecast(`Error`);
       });
   }
 
@@ -57,9 +56,8 @@ const App = () => {
 
     axios.request(options).then(function (response) {
       setFutureForecast(response.data);
-      console.log(response.data);
     }).catch(function (error) {
-      console.error(error);
+      setFutureForecast(`Error`)
     });
   }
 
