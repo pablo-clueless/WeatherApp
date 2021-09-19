@@ -28,9 +28,10 @@ const App = () => {
     axios.request(options)
       .then(response => {
         setCurrentForecast(response.data)
+        console.log(response.data)
       })
       .catch(function (error) {
-        setCurrentForecast(`Error`);
+        setCurrentForecast(error);
       });
   }
 
@@ -56,8 +57,9 @@ const App = () => {
 
     axios.request(options).then(function (response) {
       setFutureForecast(response.data);
+      console.log(response.data);
     }).catch(function (error) {
-      setFutureForecast(`Error`)
+      console.error(error);
     });
   }
 
@@ -96,19 +98,12 @@ const App = () => {
             </div>
           </div>
           <div className='flex'>
-<<<<<<< HEAD
             <h2>{currentForecast.main.temp}</h2><sup>&deg;C</sup>
           </div>
           <p>Min Temp: {currentForecast.main.temp_min}&deg;C</p>
           <img src={`http://openweathermap.org/img/w/${currentForecast.weather[0].icon}.png`} alt="" width='20%' />
-=======
-            <h1>{((currentForecast.main.temp - 32) / 1.8).toFixed(2)}</h1><sup>&deg;C</sup>
-          </div>
-          <p>Min Temp: {((currentForecast.main.temp_min - 32) / 1.8).toFixed(2)}&deg;C</p>
-          <img src={`http://openweathermap.org/img/w/${currentForecast.weather[0].icon}.png`} alt="" width='30%' />
->>>>>>> cc3205db65b878342cec26e2084617ff9907df1c
           <div className='grid'>
-            <p>{((currentForecast.main.feels_like - 32) / 1.8).toFixed(2)}&deg;C</p>
+            <p>{currentForecast.main.feels_like}&deg;C</p>
             <p>{currentForecast.weather[0].main}</p>
             <p>{currentForecast.main.pressure} psi</p>
           </div>
