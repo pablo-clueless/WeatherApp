@@ -19,7 +19,7 @@ body {
 
 .container {
   width: 300px;
-  height: 620px;
+  height: 500px;
   background: #e5f3fe;
   box-shadow: 5px 5px 10px #cee3f2, -5px -5px 10px #faffff;
   padding: 5px 20px;
@@ -43,7 +43,7 @@ body {
   box-shadow: inset -7px -7px 20px 0px #fff9, inset -4px -4px 5px 0px #fff9,
     inset 7px 7px 20px 0px #0002, inset 4px 4px 5px 0px #0001;
   color: #87b0cd;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .result {
@@ -58,7 +58,7 @@ body {
   width: 100%;
   background: #e5f3fe;
   box-shadow: 5px 5px 10px #cee3f2, -5px -5px 10px #faffff;
-  padding: 5px;
+  padding: 2px;
   margin: 5px auto;
   border-radius: 5px;
   text-align: center;

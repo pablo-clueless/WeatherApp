@@ -79,7 +79,7 @@ const App = () => {
       </div>
       {currentForecast && (
         <div className='result'>
-          <h2>{currentForecast.name}, {currentForecast.sys.country} </h2>
+          <h3>{currentForecast.name}, {currentForecast.sys.country} </h3>
           <p>{currentDate} | GMT
             {(currentForecast.timezone / 3600) > 0 ? `+${(currentForecast.timezone / 3600)}` : `${currentForecast.timezone / 3600}`}
           </p>
@@ -98,10 +98,10 @@ const App = () => {
             </div>
           </div>
           <div className='flex'>
-            <h1>{currentForecast.main.temp}</h1><sup>&deg;C</sup>
+            <h2>{currentForecast.main.temp}</h2><sup>&deg;C</sup>
           </div>
           <p>Min Temp: {currentForecast.main.temp_min}&deg;C</p>
-          <img src={`http://openweathermap.org/img/w/${currentForecast.weather[0].icon}.png`} alt="" width='30%' />
+          <img src={`http://openweathermap.org/img/w/${currentForecast.weather[0].icon}.png`} alt="" width='20%' />
           <div className='grid'>
             <p>{currentForecast.main.feels_like}&deg;C</p>
             <p>{currentForecast.weather[0].main}</p>
