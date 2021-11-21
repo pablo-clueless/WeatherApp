@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FiSearch, FiThermometer, FiWind, FiDroplet,  } from 'react-icons/fi'
+import { FiSearch, FiThermometer, FiWind, FiDroplet, FiArrowUp, FiArrowDown } from 'react-icons/fi'
 import { BiMapPin } from 'react-icons/bi'
 import { ImMeter } from 'react-icons/im'
 
@@ -92,6 +92,10 @@ const App = () => {
               <p>{weather.weather[0].description}</p>
            </div>
            <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="" />
+         </div>
+         <div className='hi-lo'>
+           <p className='hi'><FiArrowUp /> Max Temp {Math.round((weather.main.temp_max - 32) * (5 / 9))}&deg;</p>
+           <p className='lo'><FiArrowDown /> Min Temp {Math.round((weather.main.temp_min - 32) * (5 / 9))}&deg;</p>
          </div>
          <div className='details'>
           <div><p><FiDroplet />Humidity</p> <span>{weather.main.humidity}%</span></div>

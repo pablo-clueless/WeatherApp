@@ -6,6 +6,7 @@
   --dark: #000;
   --light: #fff9e8;
   --error: #eb4405;
+  --success: #00c9a7;
   --mont: 'Montserrat', sans-serif;
   --gela: 'Gelasio', serif;
 }
@@ -149,6 +150,28 @@ main {
   width: 70%;
 }
 
+.hi-lo {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 5px 20px;
+  margin: 10px auto;
+}
+
+.hi, .lo {
+  display: flex;
+  align-items: center;
+}
+
+.hi {
+  color: var(--success);
+}
+
+.lo {
+  color: var(--error);
+}
+
 .details {
   width: 100%;
   display: flex;
@@ -207,6 +230,11 @@ main {
 
   .flex h1 {
     font-size: 5rem;
+  }
+
+  .hi-lo {
+    width: 100%;
+    font-size: 0.8rem;
   }
 
   .details{
