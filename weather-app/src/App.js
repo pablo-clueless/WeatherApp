@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { FiSearch, FiThermometer, FiWind, FiDroplet, FiArrowUp, FiArrowDown } from 'react-icons/fi'
+import { FiSearch, FiThermometer, FiWind, FiDroplet, FiArrowUp, FiArrowDown} from 'react-icons/fi'
 import { BiMapPin } from 'react-icons/bi'
 import { ImMeter } from 'react-icons/im'
 
 import Header from './components/Header'
 import Loading from './components/Loading'
 import Footer from './components/Footer'
+import Error from './components/Error'
 
 
 
@@ -36,7 +37,6 @@ const App = () => {
       setLoading(false)
     } catch (err) {
       setError(err.message)
-      console.error(err)
     }
   }
 
@@ -53,7 +53,7 @@ const App = () => {
 
   if(error) {
     return (
-      <h1>Error:{error}</h1>
+      <Error error={error}/>
     )
   }
   if(loading) {
