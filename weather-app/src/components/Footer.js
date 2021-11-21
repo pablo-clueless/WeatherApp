@@ -1,10 +1,11 @@
 import React from 'react'
+import '../css/Footer.css'
 
 const Footer = () => {
     return (
         <footer>
-            <p>Copyright &copy;2021, pablo_clueless. All rights reserved</p>
-            <p>API: <a href="https://rapidapi.com/community/api/open-weather-map/">Open Weather Map</a></p>
+            <span>weather app</span>
+            <p>Copyright of pablo_clueless &copy;2021</p>
         </footer>
     )
 }
