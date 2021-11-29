@@ -8,7 +8,7 @@ import Loading from './components/Loading'
 import Footer from './components/Footer'
 import Error from './components/Error'
 
-
+const api_key = process.env.REACT_APP_API_KEY
 
 const App = () => {
   const [query, setQuery] = useState("Lagos")
@@ -22,7 +22,7 @@ const App = () => {
         "method": "GET",
         "headers": {
           "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-          "x-rapidapi-key": "ff1954025dmsheb07b3d2fcde4c8p10826djsne67f960e587f"
+          "x-rapidapi-key": `${api_key}`
         }
       })
       if(!res.ok) {
