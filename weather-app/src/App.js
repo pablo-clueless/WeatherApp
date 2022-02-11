@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FiSearch, FiThermometer, FiWind, FiDroplet, FiArrowUp, FiArrowDown} from 'react-icons/fi'
+import { FiThermometer, FiWind, FiDroplet, FiArrowUp, FiArrowDown} from 'react-icons/fi'
 import { BiMapPin } from 'react-icons/bi'
 import { ImMeter } from 'react-icons/im'
 
@@ -80,7 +80,6 @@ const App = () => {
      <div className="search">
       <form onSubmit={search}>
         <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} />
-        <button type='submit'><FiSearch /></button>
       </form>
      </div>
      {weather && (
