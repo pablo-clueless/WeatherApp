@@ -78,8 +78,10 @@ const App = () => {
    <Header />
    <main>
      <div className="search">
-       <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} />
-       <button onClick={search}><FiSearch /></button>
+      <form onSubmit={search}>
+        <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} />
+        <button type='submit'><FiSearch /></button>
+      </form>
      </div>
      {weather && (
        <div className='result'>
