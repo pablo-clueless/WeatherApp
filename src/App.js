@@ -3,52 +3,30 @@ import { FiThermometer, FiWind, FiDroplet, FiArrowUp, FiArrowDown} from 'react-i
 import { BiMapPin } from 'react-icons/bi'
 import { ImMeter } from 'react-icons/im'
 
-import Header from './components/Header'
-import Loading from './components/Loading'
-import Footer from './components/Footer'
-import Error from './components/Error'
-
-// const api_key = process.env.REACT_APP_API_KEY
+import { Error, Footer, Header, Loading } from './components'
+import { useSearchService } from './fetch-hook'
 
 const App = () => {
   const [query, setQuery] = useState("Lagos")
-  const [loading, setLoading] = useState(true)
-  const [error,setError] = useState("")
   const [weather,setWeather] = useState("")
 
+  const { loading, error, getWeatherData }  = useSearchService()
+
   const fetchData = async () => {
-    try{
-      const res = await fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=${query}%2&lang=en&units=imperial&mode=json`, {
-        "method": "GET",
-        "headers": {
-          "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-          "x-rapidapi-key": 'ff1954025dmsheb07b3d2fcde4c8p10826djsne67f960e587f'
-        }
-      })
-      if(!res.ok) {
-        throw Error(
-          "Something went wrong, please try again"
-        )
-      }
-
-      const data = await res.json()
-
-      setWeather(data)
-      setLoading(false)
-    } catch (err) {
-      setError(err.message)
-    }
+    try {
+      const data = await getWeatherData(query)
+      setWeather(data) 
+    } catch (error) {}
   }
 
-  const search = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault()
-    setLoading(true)
     fetchData()
   }
 
   useEffect(() => {
     fetchData()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   if(error) {
@@ -78,8 +56,8 @@ const App = () => {
    <Header />
    <main>
      <div className="search">
-      <form onSubmit={search}>
-        <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} />
+      <form onSubmit={submitHandler}>
+        <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
       </form>
      </div>
      {weather && (

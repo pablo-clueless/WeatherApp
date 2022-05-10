@@ -17,7 +17,7 @@ const Header = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="https://okunolasamson.netlify.app" rel='noopener noreferrer' target='_blank'>
+                    <a href="https://okunolasamson.vercel.app" rel='noopener noreferrer' target='_blank'>
                         <FiGlobe />
                     </a>
                 </li>
